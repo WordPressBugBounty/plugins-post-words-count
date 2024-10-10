@@ -4,7 +4,7 @@ Plugin Name: Post Words Count
 Description: Simple Plugin which counts <strong>Total Post Words</strong> and display the number and <strong>Post Thumbnail</strong> at All Post Section in Dashboard
 Author: Zakaria Binsaifullah
 Author URI: https://makegutenblock.com
-Version: 2.3.0
+Version: 2.3.1
 Text Domain: post-words-count
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -106,24 +106,26 @@ if ( ! function_exists( 'dci_plugin_post_words_counter' ) ) {
     function dci_plugin_post_words_counter() {
         if ( ! class_exists( 'DCI_SDK' ) ) {
             require_once plugin_dir_path( __FILE__ ) . '/dci/start.php';
+            wp_register_style('dci-sdk-post_words_counter', plugins_url('dci/assets/css/dci.css', __FILE__), array(), '1.2.1', 'all');
+            wp_enqueue_style('dci-sdk-post_words_counter');
         }
 
         dci_dynamic_init( array(
-			'sdk_version'  => '1.2.0',
+			'sdk_version'  => '1.2.1',
 			'product_id'   => 2,
-			'plugin_name' => 'Post Words Counter', // make simple, must not empty
-			'plugin_title' => 'Post Words Counter', // You can describe your plugin title here
-			'api_endpoint' => 'https://dashboard.gutenbergkits.com/wp-json/dci/v1/data-insights',
-			'slug'         => 'your-product-slug', // write 'no-need' if you don't want to use
+			'plugin_name'  => 'Post Words Counter',                                            // make simple, must not empty
+			'plugin_title' => 'Post Words Counter',                                            // You can describe your plugin title here
+			'api_endpoint' => 'https://dashboard.codedivo.com/wp-json/dci/v1/data-insights',
+			'slug'         => 'post-words-count',                                             // write 'no-need' if you don't want to use
 			'menu'         => array(
 				'slug' => 'post-words-count',
 			),
-			'public_key'   => 'pk_O9vwzVkUcXxaKahVQA75fJXflftW9hb4',
-			'is_premium'   => false,
-			'popup_notice' => true,
-			'deactivate_feedback' => true,
-			'text_domain'  => 'post-words-count',
-			'plugin_msg'   => '
+			'public_key'          => 'pk_O9vwzVkUcXxaKahVQA75fJXflftW9hb4',
+			'is_premium'          => false,
+			'popup_notice'        => true,
+			'deactivate_feedback' => false,
+			'text_domain'         => 'post-words-count',
+			'plugin_msg'          => '
 				<p> Thank you for using Post Words Counter! </p>
 				<p>
 					We collect some non-sensitive diagnostic data to help us improve the product.

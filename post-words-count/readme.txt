@@ -2,11 +2,12 @@
 Contributors: binsaifullah
 Tags: post word count, post thumbnail, post, thumbnail
 Requires at least: 5.0
-Tested up to: 6.6.1
-Stable tag: 2.3
+Tested up to: 6.6.2
+Stable tag: 2.3.1
 License: GPLv2 or later
 
-Post Words Count is a simple plugin which shows the total words of a post and thumbnail of the post at All Post section in dashboard.
+Post Words Count is a simple plugin which shows the total words of a post and thumbnail of the post at All Post section in dashboard. So, you can easily find out the total words of a post and the including or excluding the thumbnail of the post.
+
 == Description ==
 
 Post Words Count is a simple plugin which shows the total words of a post and thumbnail of the post at All Post section in dashboard. So, you can easily find out the total words of a post and the including or excluding the thumbnail of the post.
@@ -36,6 +37,9 @@ e.g.
 1. This is the first screen shot (screenshot-1.png)
 
 == Changelog ==
+= 2.3.1 =
+* Compatibility check with latest wordpress version
+
 = 2.3 =
 * Fixed the performance issue
 * Add supports for multiple languages
